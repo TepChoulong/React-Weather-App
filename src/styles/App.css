@@ -1,0 +1,31 @@
+#city-form {
+  margin: 5% auto 0;
+  width: 350px;
+  background-color: aquamarine;
+  padding: 20px;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+}
+#city-input {
+  width: 271px;
+  height: 41px;
+  font-size: 12pt;
+  padding: 0 15px 0 15px;
+}
+#submit-input {
+  width: 45px;
+  height: 45px;
+  padding: 0;
+  margin: 0;
+}
+
+.weather-container {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+}
