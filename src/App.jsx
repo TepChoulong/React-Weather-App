@@ -40,50 +40,63 @@ function App() {
             value={cityInput}
             onChange={(e) => setCityInput(e.target.value)}
           />
-          <button id="submit-input" type="submit" value={"Submit"}>
+          <button
+            id="submit-input"
+            type="submit"
+            value={"Submit"}
+            onClick={() => {
+              const weatherContainer =
+                document.querySelector(".weather-container");
+              weatherContainer.className = "animated-weather-container"; //animated-weather-container
+
+              setTimeout(() => {
+                weatherContainer.className = "weather-container";
+              }, 1000);
+            }}
+          >
             <img src={searchIcon} width={20} height={20} />
           </button>
         </div>
         <div className="weather-container">
           {data && (
             <div id="details">
-              <p>
+              <p id="weather-condition">
                 {(() => {
                   if (data.weather[0].main == "Clouds") {
-                    return <img src={cloudy} width={100} height={100} />;
+                    return <img src={cloudy} width={160} height={160} />;
                   }
 
                   if (data.weather[0].main == "Clear") {
-                    return <img src={clear} width={100} height={100} />;
+                    return <img src={clear} width={160} height={160} />;
                   }
 
                   if (data.weather[0].main == "Drizzle") {
-                    return <img src={drizzle} width={100} height={100} />;
+                    return <img src={drizzle} width={160} height={160} />;
                   }
 
                   if (data.weather[0].main == "Mist") {
-                    return <img src={mist} width={100} height={100} />;
+                    return <img src={mist} width={160} height={160} />;
                   }
 
                   if (data.weather[0].main == "Rain") {
-                    return <img src={rain} width={100} height={100} />;
+                    return <img src={rain} width={160} height={160} />;
                   }
 
                   if (data.weather[0].main == "Snowy") {
-                    return <img src={snowy} width={100} height={100} />;
+                    return <img src={snowy} width={160} height={160} />;
                   }
                 })()}
               </p>
-              <p>{data.main.temp}℃</p>
-              <p>{data.name}</p>
+              <p id="temperature">{Math.round(data.main.temp)}℃</p>
+              <p id="location">{data.name}</p>
               <div className="row">
                 <div className="humidity-container">
                   <h2>Humidity</h2>
-                  <p>{data.main.humidity}</p>
+                  <p id="humidity">{data.main.humidity}%</p>
                 </div>
                 <div className="pressure-container">
                   <h2>Pressure</h2>
-                  <p>{data.main.pressure}</p>
+                  <p id="pressure">{data.main.pressure} Pa</p>
                 </div>
               </div>
             </div>

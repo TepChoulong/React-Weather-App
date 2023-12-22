@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&family=Inter:wght@300;400;500;700&family=Kanit&family=Lato:wght@300;400&family=Lobster&family=Merriweather:wght@700&family=Roboto&family=Ubuntu:wght@500&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #52d3d8;
+}
+
 #city-form {
   margin: 5% auto 0;
   width: 350px;
-  background-color: aquamarine;
+  background-color: #3887be;
   padding: 20px;
+  color: white;
 }
 .input-container {
   display: flex;
@@ -10,22 +18,68 @@
 }
 #city-input {
   width: 271px;
-  height: 41px;
+  height: 45px;
   font-size: 12pt;
   padding: 0 15px 0 15px;
+  outline: none;
+  border: none;
+  background-color: rgb(255, 255, 255);
 }
 #submit-input {
   width: 45px;
   height: 45px;
   padding: 0;
   margin: 0;
+  outline: none;
+  border: none;
+  background-color: rgb(255, 255, 255);
 }
 
 .weather-container {
   text-align: center;
 }
+.animated-weather-container {
+  text-align: center;
+  animation: popup 1s;
+}
+
+#weather-condition {
+  margin-top: 2rem;
+}
+
+#temperature {
+  font-size: 28pt;
+  margin-bottom: 1rem;
+}
+#location {
+  font-size: 16pt;
+}
 
 .row {
   display: flex;
   justify-content: space-around;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  80% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
